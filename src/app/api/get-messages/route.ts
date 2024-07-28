@@ -10,7 +10,6 @@ export async function GET(request: Request) {
 
     const session = await getServerSession(authOptions);
     const user: User = session?.user as User;
-    console.log(user)
 
     if(!session || !session.user) {
         return Response.json(
@@ -32,14 +31,11 @@ export async function GET(request: Request) {
             { $group: { _id: '$_id', messages: { $push: '$messages' } } },
           ]);
 
-        console.log(userId)
-        console.log(user)
-
         if(!user || user.length === 0) {
             return Response.json(
                 {
                     success: false,
-                    message: "User not found"
+                    message: "No messages found"
                     }, {status: 404}
                 );
         }
