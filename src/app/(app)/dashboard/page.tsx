@@ -1,5 +1,6 @@
 "use client"
 
+import React from 'react';
 import MessageCard from "@/components/MessageCard";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -16,7 +17,7 @@ import { useSession } from "next-auth/react";
 import { Key, useCallback, useEffect, useState } from "react"
 import { useForm } from "react-hook-form";
 
-const page = () => {
+const Dashboard = () => {
 
   const [messages, setMessages] = useState<Message[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -183,4 +184,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Dashboard;
