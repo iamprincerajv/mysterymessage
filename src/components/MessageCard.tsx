@@ -50,7 +50,7 @@ const MessageCard = ({ message, onMessageDelete}: MessageCardProps) => {
             </AlertDialogTrigger>
             <AlertDialogContent>
               <AlertDialogHeader>
-                <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+                <AlertDialogTitle>Are you sure?</AlertDialogTitle>
                 <AlertDialogDescription>
                   This action cannot be undone. This will permanently delete
                   this message.
@@ -58,10 +58,10 @@ const MessageCard = ({ message, onMessageDelete}: MessageCardProps) => {
               </AlertDialogHeader>
               <AlertDialogFooter>
                 <AlertDialogCancel>
-                  Cancel
+                  No
                 </AlertDialogCancel>
                 <AlertDialogAction onClick={handleDeleteConfirm}>
-                  Continue
+                  Yes
                 </AlertDialogAction>
               </AlertDialogFooter>
             </AlertDialogContent>
