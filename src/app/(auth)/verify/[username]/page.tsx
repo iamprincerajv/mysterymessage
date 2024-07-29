@@ -1,4 +1,5 @@
 "use client"
+
 import { Button } from '@/components/ui/button';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
@@ -12,7 +13,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 
-const page = () => {
+const Verify = () => {
 
     const router = useRouter();
     const params = useParams<{username: string}>()
@@ -77,4 +78,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Verify;

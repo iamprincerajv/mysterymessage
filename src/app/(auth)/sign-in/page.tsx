@@ -1,5 +1,6 @@
 "use client"
 
+import React from 'react';
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -16,7 +17,7 @@ import { Loader2 } from "lucide-react";
 import { signInSchema } from "@/schemas/signInSchema";
 import { signIn } from "next-auth/react";
 
-const page = () => {
+const SignIn = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const { toast } = useToast();
@@ -38,7 +39,6 @@ const page = () => {
       identifier: data.identifier,
       password: data.password,
     });
-    console.log(result)
 
     if(result?.error) {
       toast({
@@ -118,4 +118,4 @@ const page = () => {
   )
 }
 
-export default page
+export default SignIn;
