@@ -156,7 +156,7 @@ export default function SendMessage() {
               <AlertDialogHeader>
                 <AlertDialogTitle>Feature Discontinued</AlertDialogTitle>
                 <AlertDialogDescription>
-                  This feature of message suggestion has been discontinued due to pricing of OpenAI. Since, it's not free, we could not afford to provide you with such feature. Sorry for the inconvenience!
+                  This feature of message suggestion has been discontinued due to pricing of OpenAI. Since, it&apos;s not free, we could not afford to provide you with such feature. Sorry for the inconvenience!
                 </AlertDialogDescription>
               </AlertDialogHeader>
               <AlertDialogFooter>
