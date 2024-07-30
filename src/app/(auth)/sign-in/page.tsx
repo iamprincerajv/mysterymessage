@@ -46,10 +46,10 @@ const SignIn = () => {
         description: "Incorrect Login Details",
         variant: "destructive"
       });
+    }
 
-      if(result?.url) {
-        router.replace("/dashboard");
-      }
+    if(result?.url) {
+      router.replace("/dashboard");
     }
 
     setIsSubmitting(false);
