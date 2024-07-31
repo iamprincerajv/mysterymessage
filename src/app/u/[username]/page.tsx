@@ -33,7 +33,7 @@ const parseStringMessages = (messageString: string): string[] => {
 };
 
 const initialMessageString =
-  "What's your favorite movie?||Do you have any pets?||What's your dream job?";
+  "What's your favorite movie? || Do you have any pets? || What's your dream job?";
 
 export default function SendMessage() {
   const params = useParams<{ username: string }>();
@@ -87,18 +87,21 @@ export default function SendMessage() {
     }
   };
 
-  // const fetchSuggestedMessages = async () => {
-  //   try {
-  //     complete('');
-  //   } catch (error) {
-  //     console.error('Error fetching messages:', error);
-  //     toast({
-  //       title: "Error",
-  //       description: "Could not get suggested messages",
-  //       variant: "destructive"
-  //     })
-  //   }
-  // };
+  const fetchSuggestedMessages = async () => {
+    try {
+      complete("");
+      console.log(completion)
+      console.log(error)
+
+    } catch (error) {
+      console.error('Error fetching messages:', error);
+      toast({
+        title: "Error",
+        description: "Could not get suggested messages",
+        variant: "destructive"
+      })
+    }
+  };
 
   return (
     <div className="container mx-auto my-8 p-6 bg-white rounded max-w-4xl">
@@ -141,32 +144,13 @@ export default function SendMessage() {
 
       <div className="space-y-4 my-8">
         <div className="space-y-2">
-
-        <AlertDialog>
-            <AlertDialogTrigger asChild>
-            <Button
-            // onClick={fetchSuggestedMessages}
+        <Button
+            onClick={fetchSuggestedMessages}
             className="my-4"
             disabled={isSuggestLoading}
           >
             Suggest Messages
           </Button>
-            </AlertDialogTrigger>
-            <AlertDialogContent>
-              <AlertDialogHeader>
-                <AlertDialogTitle>Feature Discontinued</AlertDialogTitle>
-                <AlertDialogDescription>
-                  This feature of message suggestion has been discontinued due to pricing of OpenAI. Since, it&apos;s not free, we could not afford to provide you with such feature. Sorry for the inconvenience!
-                </AlertDialogDescription>
-              </AlertDialogHeader>
-              <AlertDialogFooter>
-                <AlertDialogCancel className='bg-black text-white'>
-                  Okay, I understand!
-                </AlertDialogCancel>
-              </AlertDialogFooter>
-            </AlertDialogContent>
-          </AlertDialog>
-
           <p>Click on any message below to select it.</p>
         </div>
         <Card>
