@@ -160,14 +160,13 @@ export default function SendMessage() {
               <p className="text-red-500">{error.message}</p>
             ) : (
               parseStringMessages(completion).map((message, index) => (
-                <Button
+                <p
                   key={index}
-                  variant="outline"
-                  className="mb-2"
+                  className="mb-2 cursor-pointer p-1 rounded-md"
                   onClick={() => handleMessageClick(message)}
                 >
                   {message}
-                </Button>
+                </p>
               ))
             )}
           </CardContent>
