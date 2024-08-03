@@ -43,6 +43,10 @@ export async function POST(req: Request) {
     }, {status: 403});
   } catch (error) {
     console.error("An error occured in suggest-messages");
-    throw error;
+    // throw error;
+    return Response.json({
+      success: false,
+      message: "This feature isn't available at the moment. Try again later",
+    }, {status: 403});
   }
 }
